@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import morgan from 'morgan';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 const __dirName = dirname(fileURLToPath(import.meta.url));
@@ -7,7 +8,7 @@ const __dirName = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const port = 3000;
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(morgan('dev'), bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
   res.sendFile(__dirName + '/index.html');
@@ -15,7 +16,7 @@ app.get('/', (req, res) => {
 
 app.post('/submit', (req, res) => {
   console.log(req.body);
-  // res.send(`<h1> ${JSON.stringify(req.body)} </h1>`);
+  res.send(`<h1> ${JSON.stringify(req.body)} </h1>`);
 });
 
 app.get('/about', (req, res) => {
