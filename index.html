@@ -9,6 +9,7 @@
     <h1>First Server</h1>
     <p>Welcomes to my first Node.js and Express.js Server.</p>
     <hr />
+    <h2>Middleware using Body Parser and Morgan</h2>
     <form action="/submit" method="POST">
       <label for="email">Email</label>
       <input type="text" name="email" required />
@@ -16,6 +17,14 @@
       <input type="text" name="password" required />
       <input type="submit" value="submit" />
     </form>
-    <!-- <script src="/server.js"></script> -->
+    <hr />
+    <h2>Band Name Generator</h2>
+    <form action="/generate" method="POST">
+      <label for="street">Street Name</label>
+      <input type="text" name="street" required />
+      <label for="pet">Pet Name</label>
+      <input type="text" name="pet" required />
+      <input type="submit" value="submit" />
+    </form>
   </body>
 </html>

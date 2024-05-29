@@ -16,7 +16,13 @@ app.get('/', (req, res) => {
 
 app.post('/submit', (req, res) => {
   console.log(req.body);
-  res.send(`<h1> ${JSON.stringify(req.body)} </h1>`);
+  res.send(JSON.stringify(req.body));
+});
+
+app.post('/generate', (req, res) => {
+  res.send(
+    `<h1>Your Band Name is:</h1><h2>${req.body.street}${req.body.pet}👍</h2>`
+  );
 });
 
 app.get('/about', (req, res) => {
