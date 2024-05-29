@@ -25,6 +25,14 @@ app.post('/generate', (req, res) => {
   );
 });
 
+app.post('/login', (req, res) => {
+  if (req.body.password === 'ILoveProgramming') {
+    res.sendFile(__dirName + '/secrets.html');
+  } else {
+    res.redirect('/');
+  }
+});
+
 app.get('/about', (req, res) => {
   res.send(
     '<h1>Backend Technologies</h1><p>Able to use Node.js to initialize a server with the help of Express.js to make it easier and more efficient</p>'
